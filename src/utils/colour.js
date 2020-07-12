@@ -65,3 +65,20 @@ export function textToHtmlRainbow(str) {
             '">' + c + '</font>';
     }).join("");
 }
+
+export function textToHtmlRainbowBar(str) {
+    const frequency = 360 / str.length;
+
+    return str.split("").map((c, i) => {
+        const [r, g, b] = hueToRGB(i * frequency, 1.0, 0.5);
+        return '<font color="#' +
+            r.toString(16).padStart(2, "0") +
+            g.toString(16).padStart(2, "0") +
+            b.toString(16).padStart(2, "0") +
+            '" data-mx-bg-color="#'+
+            r.toString(16).padStart(2, "0") +
+            g.toString(16).padStart(2, "0") +
+            b.toString(16).padStart(2, "0") +
+            '">' + c + '</font>';
+    }).join("");
+}

@@ -185,3 +185,15 @@ limitations under the License.
         margin-top: -8px;
     }
 }
+
+.mx_MatrixChat_useSuperCompactLayout {
+    .mx_RoomSubList_labelContainer {
+        margin: 0 1px;
+        height: 24px;
+    }
+    .mx_RoomSubList_scroll {
+        padding: 0 1px;
+    }
+    .collapsed {
+    }
+}

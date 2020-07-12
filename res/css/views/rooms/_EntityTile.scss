@@ -121,6 +121,18 @@ limitations under the License.
     text-overflow: clip;
 }
 
+.mx_MatrixChat_useSuperCompactLayout {
+
+    .mx_EntityTile_avatar,
+    .mx_GroupRoomTile_avatar {
+        padding-left: 1px;
+        padding-right: 6px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+
+}
+
 .mx_EntityTile_power {
     padding-inline-start: 6px;
     font-size: $font-10px;

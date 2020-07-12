@@ -226,3 +226,10 @@ limitations under the License.
 .mx_GroupInviteTile .mx_RoomTile_name {
     flex: 1;
 }
+
+.mx_MatrixChat_useSuperCompactLayout {
+    .mx_RoomTile {
+        height: 26px;
+        padding: 0 1px 0 1px;
+    }
+}

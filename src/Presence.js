@@ -96,12 +96,39 @@ class Presence {
         }
 
         try {
-            await MatrixClientPeg.get().setPresence(this.state);
+            await this._send();
             console.info("Presence: %s", newState);
         } catch (err) {
             console.error("Failed to set presence: %s", err);
             this.state = oldState;
         }
+    }
+
+    /**
+     * Set the status message
+     * @param {string} statusMsg the status message to set
+     */
+    async setStatusMessage(newStatusMsg) {
+        const oldStatusMsg = this.statusMsg;
+        this.statusMsg = newStatusMsg;
+
+        try {
+            await this._send();
+            console.log("Presence Status Msg: %s", newStatusMsg);
+        } catch (err) {
+            console.error("Failed to set presence: %s", err);
+            this.statusMsg = oldStatusMsg;
+        }
+    }
+
+    async _send() {
+        const opts = {
+            presence: this.state || "online",
+        };
+        if (this.statusMsg) {
+            opts.status_msg = this.statusMsg;
+        }
+        await MatrixClientPeg.get().setPresence(opts);
     }
 }
 

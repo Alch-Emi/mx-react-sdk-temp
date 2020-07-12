@@ -522,7 +522,6 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus {
     opacity: 0;
     cursor: pointer;
 }
-
 // username colors
 // used by SenderProfile & RoomPreviewBar
 .mx_Username_color1 {
@@ -555,6 +554,30 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus {
 
 .mx_Username_color8 {
     color: $username-variant8-color;
+}
+
+.mx_MatrixChat_useSuperCompactLayout {
+    .gm-scrollbar {
+        border-radius: 3px ! important;
+    }
+    .gm-scrollbar.-vertical {
+        width: 5px;
+        transition: width 120ms ease-out ! important;
+    }
+    .gm-scrollbar.-vertical:hover,
+    .gm-scrollbar.-vertical:active {
+        width: 5px;
+        transition: width 120ms ease-out ! important;
+    }
+    .gm-scrollbar.-horizontal {
+        height: 3px;
+        transition: height 120ms ease-out ! important;
+    }
+    .gm-scrollbar.-horizontal:hover,
+    .gm-scrollbar.-horizontal:active {
+        height: 5px;
+        transition: height 120ms ease-out ! important;
+    }
 }
 
 @define-mixin mx_Tooltip_dark {

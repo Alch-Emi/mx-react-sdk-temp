@@ -132,3 +132,11 @@ limitations under the License.
     order: 2;
     margin: auto;
 }
+
+.mx_MatrixChat_useSuperCompactLayout {
+
+    .mx_RightPanel {
+        min-width: 200px;
+    }
+
+}

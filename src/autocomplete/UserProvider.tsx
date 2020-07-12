@@ -3,6 +3,7 @@ Copyright 2016 Aviral Dasgupta
 Copyright 2017 Vector Creations Ltd
 Copyright 2017, 2018 New Vector Ltd
 Copyright 2018 Michael Telatynski <7t3chguy@gmail.com>
+Copyright 2018 ponies.im
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -15,6 +16,11 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+Additionally, original modifications by ponies.im are licensed under the CSL.
+See https://coinsh.red/csl/csl.txt or the provided CSL.txt for additional information.
+These modifications may only be redistributed and used within the terms of 
+the Cooperative Software License as distributed with this project.
 */
 
 import React from 'react';
@@ -38,7 +44,7 @@ const USER_REGEX = /\B@\S*/g;
 
 // used when you hit 'tab' - we allow some separator chars at the beginning
 // to allow you to tab-complete /mat into /(matthew)
-const FORCED_USER_REGEX = /[^/,:; \t\n]\S*/g;
+const FORCED_USER_REGEX = /[^,:; \t\n]\S*/g;
 
 interface IRoomTimelineData {
     timeline: EventTimeline;

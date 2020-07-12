@@ -153,3 +153,11 @@ limitations under the License.
 .mx_MemberInfo .mx_MemberInfo_scrollContainer {
     flex: 1;
 }
+
+.mx_MatrixChat_useSuperCompactLayout {
+
+    .mx_MemberInfo_container {
+        margin: 0 1px 1px 1px;
+    }
+
+}

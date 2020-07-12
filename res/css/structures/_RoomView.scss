@@ -298,3 +298,11 @@ hr.mx_RoomView_myReadMarker {
         min-height: 42px;
     }
 }
+
+.mx_MatrixChat_useSuperCompactLayout {
+
+    .mx_RoomView_MessageList {
+        padding: 1px;
+    }
+
+}

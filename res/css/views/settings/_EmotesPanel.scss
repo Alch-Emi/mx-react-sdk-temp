@@ -1,0 +1,32 @@
+/*
+Copyright 2018 ponies.im
+Copyright 2020 chat.horse
+
+Licensed under the Cooperative Software License (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License with this software or at
+
+    http://coinsh.red/csl/csl.txt
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.mx_EmotesUserSettingsTab .mx_AccessibleButton {
+    // Pad out buttons a bit
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.mx_EmotesUserSettingsTab .mx_Field_input {
+    // Fix spacing between emote entries
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.mx_EmotesPanel_file > input {
+    display: none;
+}

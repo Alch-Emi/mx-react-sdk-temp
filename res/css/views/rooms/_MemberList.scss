@@ -98,3 +98,22 @@ limitations under the License.
     background-position: center left;
     padding-left: 25px;
 }
+
+.mx_MatrixChat_useSuperCompactLayout {
+
+    .mx_MemberList_invite,
+    .mx_RightPanel_invite {
+        padding: 1px;
+        margin: 1px;
+    }
+
+    .mx_MemberList_wrapper {
+        padding: 1px;
+    }
+
+    #mx_MemberList_query,{
+        margin: 0;
+        height: 32px;
+    }
+
+}

@@ -47,3 +47,12 @@ limitations under the License.
     height: 6px;
     background-color: $roomsublist-label-fg-color;
 }
+
+.mx_MatrixChat_useSuperCompactLayout {
+
+    .mx_TopLeftMenuButton {
+        flex: 0 0 32px;
+        padding: 0 1px;
+    }
+
+}

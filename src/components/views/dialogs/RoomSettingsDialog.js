@@ -29,6 +29,7 @@ import * as sdk from "../../../index";
 import {MatrixClientPeg} from "../../../MatrixClientPeg";
 import dis from "../../../dispatcher/dispatcher";
 import SettingsStore from "../../../settings/SettingsStore";
+import EmotesRoomSettingsTab from "../settings/tabs/room/EmotesRoomSettingsTab";
 
 export const ROOM_GENERAL_TAB = "ROOM_GENERAL_TAB";
 export const ROOM_SECURITY_TAB = "ROOM_SECURITY_TAB";
@@ -85,6 +86,11 @@ export default class RoomSettingsDialog extends React.Component {
             _td("Notifications"),
             "mx_RoomSettingsDialog_notificationsIcon",
             <NotificationSettingsTab roomId={this.props.roomId} />,
+        ));
+        tabs.push(new Tab(
+            _td("Emotes"),
+            "mx_MessageComposer_emoji",
+            <EmotesRoomSettingsTab roomId={this.props.roomId} />,
         ));
 
         if (SettingsStore.isFeatureEnabled("feature_bridge_state")) {

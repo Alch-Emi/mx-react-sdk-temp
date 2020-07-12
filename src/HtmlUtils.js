@@ -196,6 +196,7 @@ const transformTags = { // custom to matrix
         const customCSSMapper = {
             'data-mx-color': 'color',
             'data-mx-bg-color': 'background-color',
+            'vertical-align': 'vertical-align',
             // $customAttributeKey: $cssAttributeKey
         };
 
@@ -209,6 +210,9 @@ const transformTags = { // custom to matrix
             ) {
                 style += cssAttributeKey + ":" + customAttributeValue + ";";
                 delete attribs[customAttributeKey];
+            } else if (customAttributeValue &&
+                       customAttributeValue === 'middle') {
+                 style += cssAttributeKey + ":" + customAttributeValue + ";";
             }
         });
 
@@ -220,20 +224,21 @@ const transformTags = { // custom to matrix
     },
 };
 
-const sanitizeHtmlParams = {
+export const sanitizeHtmlParams = {
     allowedTags: [
         'font', // custom to matrix for IRC-style font coloring
         'del', // for markdown
         'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul', 'ol', 'sup', 'sub',
         'nl', 'li', 'b', 'i', 'u', 'strong', 'em', 'strike', 'code', 'hr', 'br', 'div',
         'table', 'thead', 'caption', 'tbody', 'tr', 'th', 'td', 'pre', 'span', 'img',
+        'ruby', 'rt', 'rp',
     ],
     allowedAttributes: {
         // custom ones first:
         font: ['color', 'data-mx-bg-color', 'data-mx-color', 'style'], // custom to matrix
         span: ['data-mx-bg-color', 'data-mx-color', 'data-mx-spoiler', 'style'], // custom to matrix
         a: ['href', 'name', 'target', 'rel'], // remote target: custom to matrix
-        img: ['src', 'width', 'height', 'alt', 'title'],
+        img: ['src', 'width', 'height', 'alt', 'title', 'vertical-align'],
         ol: ['start'],
         code: ['class'], // We don't actually allow all classes, we filter them in transformTags
     },

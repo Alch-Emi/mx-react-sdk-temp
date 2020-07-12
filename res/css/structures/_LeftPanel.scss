@@ -127,6 +127,26 @@ limitations under the License.
     }
 }
 
+.mx_MatrixChat_useSuperCompactLayout {
+
+    .mx_LeftPanel_container.collapsed.mx_LeftPanel_container_hasTagPanel {
+        /* TagPanel 48px + Collapsed LeftPanel 70px */
+        flex: 0 0 128px;
+    }
+
+    .mx_LeftPanel_tagPanelContainer {
+        flex: 0 0 48px;
+    }
+
+    .mx_LeftPanel_container {
+        min-width: 200px;
+    }
+
+    .mx_LeftPanel_container.collapsed {
+        min-width: unset;
+    }
+}
+
 .mx_LeftPanel_exploreAndFilterRow {
     display: flex;
 

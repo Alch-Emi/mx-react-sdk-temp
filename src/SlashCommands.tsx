@@ -29,7 +29,7 @@ import MultiInviter from './utils/MultiInviter';
 import { linkifyAndSanitizeHtml } from './HtmlUtils';
 import QuestionDialog from "./components/views/dialogs/QuestionDialog";
 import WidgetUtils from "./utils/WidgetUtils";
-import {textToHtmlRainbow} from "./utils/colour";
+import {textToHtmlRainbow, textToHtmlRainbowBar} from "./utils/colour";
 import { getAddressType } from './UserAddress';
 import { abbreviateUrl } from './utils/UrlUtils';
 import { getDefaultIdentityServerUrl, useDefaultIdentityServer } from './utils/IdentityServerUtils';
@@ -915,12 +915,32 @@ export const Commands = [
         category: CommandCategories.messages,
     }),
     new Command({
+        command: "rainbowbar",
+        description: _td("Sends the given message coloured as a rainbow"),
+        args: '<message>',
+        runFn: function(roomId, args) {
+            if (!args) return reject(this.getUserId());
+            return success(MatrixClientPeg.get().sendHtmlMessage(roomId, args, textToHtmlRainbowBar(args)));
+        },
+        category: CommandCategories.messages,
+    }),
+    new Command({
         command: "rainbowme",
         description: _td("Sends the given emote coloured as a rainbow"),
         args: '<message>',
         runFn: function(roomId, args) {
             if (!args) return reject(this.getUserId());
             return success(MatrixClientPeg.get().sendHtmlEmote(roomId, args, textToHtmlRainbow(args)));
+        },
+        category: CommandCategories.messages,
+    }),
+    new Command({
+        command: "rainbowbarme",
+        description: _td("Sends the given emote coloured as a rainbow"),
+        args: '<message>',
+        runFn: function(roomId, args) {
+            if (!args) return reject(this.getUserId());
+            return success(MatrixClientPeg.get().sendHtmlEmote(roomId, args, textToHtmlRainbowBar(args)));
         },
         category: CommandCategories.messages,
     }),

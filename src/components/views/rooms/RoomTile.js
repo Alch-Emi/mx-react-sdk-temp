@@ -105,7 +105,7 @@ export default createReactClass({
         if (!statusUser) {
             return "";
         }
-        return statusUser._unstable_statusMessage;
+        return statusUser.presenceStatusMsg;
     },
 
     onRoomStateMember: function(ev, state, member) {
@@ -250,7 +250,7 @@ export default createReactClass({
         if (this._shouldShowStatusMessage()) {
             const statusUser = this._getStatusMessageUser();
             if (statusUser) {
-                statusUser.on("User._unstable_statusMessage", this._onStatusMessageCommitted);
+                statusUser.on("User.presenceStatusMsg", this._onStatusMessageCommitted);
             }
         }
 
@@ -278,7 +278,7 @@ export default createReactClass({
             const statusUser = this._getStatusMessageUser();
             if (statusUser) {
                 statusUser.removeListener(
-                    "User._unstable_statusMessage",
+                    "User.presenceStatusMsg",
                     this._onStatusMessageCommitted,
                 );
             }

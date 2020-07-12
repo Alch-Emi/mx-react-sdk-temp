@@ -1,6 +1,7 @@
 /*
 Copyright 2016 Aviral Dasgupta
 Copyright 2017, 2018 New Vector Ltd
+Copyright 2018 ponies.im
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -13,6 +14,11 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+Additionally, original modifications by ponies.im are licensed under the CSL.
+See https://coinsh.red/csl/csl.txt or the provided CSL.txt for additional information.
+These modifications may only be redistributed and used within the terms of 
+the Cooperative Software License as distributed with this project.
 */
 
 import {ReactElement} from 'react';
@@ -24,6 +30,8 @@ import RoomProvider from './RoomProvider';
 import UserProvider from './UserProvider';
 import EmojiProvider from './EmojiProvider';
 import NotifProvider from './NotifProvider';
+import PonymoteProvider from './PonymoteProvider';
+import EmoteProvider from './EmoteProvider';
 import {timeout} from "../utils/promise";
 import AutocompleteProvider, {ICommand} from "./AutocompleteProvider";
 
@@ -54,6 +62,8 @@ const PROVIDERS = [
     CommandProvider,
     CommunityProvider,
     DuckDuckGoProvider,
+    EmoteProvider,
+    PonymoteProvider,
 ];
 
 // Providers will get rejected if they take longer than this.
